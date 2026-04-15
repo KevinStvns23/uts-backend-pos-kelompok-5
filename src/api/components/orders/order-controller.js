@@ -46,7 +46,7 @@ exports.updateOrder = async (req, res) => {
     const updated = await Order.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true } // biar return data terbaru
+      { new: true }
     );
 
     if (!updated) {

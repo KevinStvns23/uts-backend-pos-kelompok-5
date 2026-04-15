@@ -1,11 +1,10 @@
 require("dotenv").config();
 
-console.log(process.env.MONGO_URI); // 👈 TAMBAH DI SINI
+console.log(process.env.MONGO_URI); 
 
 const app = require("./src/core/server");
-const connectDB = require("./src/core/config"); // 👈 TAMBAH
+const connectDB = require("./src/core/config");
 
-// 👇 TAMBAH INI
 connectDB();
 
 const PORT = 3000;

@@ -6,7 +6,7 @@ const {
   getOrders,
   getOrderById,
   deleteOrder,
-  updateOrder   // 👈 TAMBAHKAN
+  updateOrder
 } = require("./order-controller");
 
 router.post("/", createOrder);
