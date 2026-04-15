@@ -10,4 +10,7 @@ app.get("/", (req, res) => {
 const orderRoutes = require("../api/components/orders/order-route");
 app.use("/api/orders", orderRoutes);
 
-module.exports = app;
+const productRoutes = require("../api/components/products/product-route");
+app.use("/api/products", productRoutes);
+
+module.exports = app
