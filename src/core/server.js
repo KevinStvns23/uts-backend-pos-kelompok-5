@@ -13,4 +13,4 @@ app.use("/api/orders", orderRoutes);
 const productRoutes = require("../api/components/products/product-route");
 app.use("/api/products", productRoutes);
 
-module.exports = app
+module.exports = app;
