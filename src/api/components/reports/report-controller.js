@@ -38,7 +38,41 @@ const getLowStock = async (req, res, next) => {
   }
 };
 
+// Barang Habis Total (Stok = 0)
+const getOutOfStock = async (req, res, next) => {
+  try {
+    const outOfStockProducts = await Product.find({ stock: 0 });
+
+    return res.status(200).json({
+        message: "Daftar Barang Habis (Kosong)",
+        jumlah_barang: outOfStockProducts.length,
+        barang: outOfStockProducts
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+// 5 Transaksi Terakhir
+const getRecentTransactions = async (req, res, next) => {
+  try {
+    // Mencari pesanan, diurutkan dari yang paling baru (createdAt: -1), dan dibatasi 5 saja
+    const recentOrders = await Order.find({}).sort({ createdAt: -1 }).limit(5);
+
+    return res.status(200).json({
+        message: "5 Transaksi Terakhir",
+        jumlah_transaksi: recentOrders.length,
+        transaksi: recentOrders
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+
 module.exports = {
   getRevenue,
-  getLowStock
+  getLowStock,
+  getOutOfStock,
+  getRecentTransactions
 };
