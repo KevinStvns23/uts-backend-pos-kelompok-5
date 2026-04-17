@@ -25,7 +25,7 @@ const getRevenue = async (req, res, next) => {
 
 const getLowStock = async (req, res, next) => {
   try {
-    // FITUR ASLI: Cari barang yang stoknya kurang dari 5
+    //Cari barang yang stoknya kurang dari 5
     const lowStockProducts = await Product.find({ stock: { $lt: 5 } });
 
     return res.status(200).json({
@@ -56,7 +56,7 @@ const getOutOfStock = async (req, res, next) => {
 // 5 Transaksi Terakhir
 const getRecentTransactions = async (req, res, next) => {
   try {
-    // Mencari pesanan, diurutkan dari yang paling baru (createdAt: -1), dan dibatasi 5 saja
+    // Mencari pesanan
     const recentOrders = await Order.find({}).sort({ createdAt: -1 }).limit(5);
 
     return res.status(200).json({
