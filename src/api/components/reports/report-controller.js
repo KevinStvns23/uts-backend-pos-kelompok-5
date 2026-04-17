@@ -1,7 +1,7 @@
 // Mengambil model/database buatan Kevin
 const Order = require('../../../models/order-schema');
 
-// SEKARANG KITA NYALAKAN KARENA FILE YOVAN SUDAH ADA
+// File Yovan
 const Product = require('../../../models/product-schema'); 
 
 const getRevenue = async (req, res, next) => {
