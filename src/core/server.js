@@ -13,4 +13,10 @@ app.use("/api/orders", orderRoutes);
 const usersRoutes = require('../api/components/users/users-route');
 app.use('/api/users', usersRoutes);
 
+const categoryRoutes = require("../api/components/categories/category-route");
+app.use("/api/categories", categoryRoutes);
+
+const productRoutes = require("../api/components/products/product-route");
+app.use("/api/products", productRoutes);
+
 module.exports = app;
